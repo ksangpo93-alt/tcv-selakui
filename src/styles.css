@@ -1,0 +1,455 @@
+/* =========================================
+   1. CSS VARIABLES (Light Pastel Theme)
+   ========================================= */
+   :root {
+    /* Main Brand Colors */
+    --primary: #0f766e;
+    --text-dark: #0f172a;
+    --text-light: #f8fafc;
+    --text-muted: #475569;
+    
+    /* Pastel Accents */
+    --accent-1: #a5f0e5; 
+    --accent-2: #bae6fd; 
+    --accent-3: #c7d2fe; 
+    --accent-4: #ddd6fe; 
+    --accent-5: #fce7f3; 
+    --accent-6: #ecfdf5; 
+  
+    /* Icon Foreground Colors */
+    --icon-1: #0d9488;
+    --icon-2: #0284c7;
+    --icon-3: #4f46e5;
+    --icon-4: #7c3aed;
+    --icon-5: #db2777;
+    --icon-6: #059669;
+  
+    /* Backgrounds & Borders */
+    --page-bg: #ffffff;
+    --page-bg-alt: #f8fafc;
+    --card-bg: #ffffff;
+    --card-bg-alt: #f1f5f9;
+    --border-color: #e2e8f0;
+    --border-color-light: #f1f5f9;
+  
+    /* Shadows */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+  }
+  
+  /* =========================================
+     2. BASE & DESKTOP ALIGNMENT FIXES
+     ========================================= */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--page-bg);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    padding-top: 5rem; /* Prevents hero from hiding behind sticky navbar */
+    margin: 0;
+  }
+  
+  /* Section Spacing - Optimized for Desktop (Fix 3) */
+  .section-light { background-color: var(--page-bg); padding: 5rem 1.5rem; }
+  .section-alt { background-color: var(--page-bg-alt); padding: 5rem 1.5rem; border-top: 1px solid var(--border-color-light); border-bottom: 1px solid var(--border-color-light); }
+  .section-highlight { background-color: #f0f9ff; padding: 5rem 1.5rem; border-top: 1px solid #e0f2fe; }
+  
+  @media (min-width: 1024px) {
+    .section-light, .section-alt, .section-highlight {
+      padding: 7.5rem 2rem; /* Massive, breathable spacing for desktop */
+    }
+  }
+  
+  /* =========================================
+     3. TYPOGRAPHY & READABILITY
+     ========================================= */
+  .heading-xl { font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: var(--text-dark); }
+  .heading-lg { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--text-dark); margin-bottom: 3rem; text-align: center; }
+  .heading-md { font-size: 1.35rem; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
+  .heading-sm { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+  .heading-xs { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); }
+  
+  /* Limits paragraph width for optimal desktop reading (Fix 3) */
+  .body-text-lg { font-size: 1.125rem; color: var(--text-muted); font-weight: 500; line-height: 1.6; max-width: 800px; margin-inline: auto; text-align: center; }
+  .body-text { font-size: 1.05rem; line-height: 1.75; color: var(--text-muted); }
+  .sub-text { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; line-height: 1.6; }
+  
+ /* =========================================
+   4. NAVBAR (Advanced Animations & Responsive)
+   ========================================= */
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%; height: 5rem; z-index: 999;
+  padding: 0 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm); display: flex; align-items: center;
+}
+.logo-title { font-size: 1.35rem; font-weight: 800; color: var(--text-dark); text-decoration: none; letter-spacing: -0.01em; margin-right: 0.75rem;}
+.logo-subtitle { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.02em; margin-top: 0.1rem; }
+
+/* Desktop Navigation */
+.nav-links-desktop { display: none; }
+@media (min-width: 1024px) {
+  .nav-links-desktop { display: flex; align-items: center; gap: 1.75rem; }
+  .hamburger-btn { display: none !important; }
+}
+
+/* Nav Links (Hover & Active States) */
+.nav-link {
+  position: relative; font-size: 0.9rem; font-weight: 600; color: var(--text-muted);
+  text-decoration: none; padding: 0.5rem 0; transition: color 200ms ease;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+
+/* Bottom Underline Animation */
+.nav-link::after {
+  content: ''; position: absolute; left: 0; bottom: 0;
+  width: 0%; height: 2px; background-color: var(--primary);
+  transition: width 200ms ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+/* Hamburger Button */
+.hamburger-btn {
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer; color: var(--primary); padding: 0.5rem;
+}
+.hamburger-icon { transition: transform 300ms ease, color 300ms ease; }
+.hamburger-icon.open { transform: rotate(90deg); color: var(--text-dark); }
+
+/* Mobile Menu Slide-Down Wrapper */
+.mobile-menu-wrapper {
+  position: absolute; top: 5rem; left: 0; width: 100%;
+  background-color: var(--page-bg); box-shadow: var(--shadow-lg);
+  overflow: hidden; max-height: 0; opacity: 0;
+  transition: max-height 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity 400ms ease;
+}
+.mobile-menu-wrapper.open {
+  max-height: 80vh; opacity: 1; /* Slide down execution */
+}
+
+/* Mobile Links */
+.mobile-menu-scroll { overflow-y: auto; max-height: 80vh; padding-bottom: 2rem; }
+.nav-link-mobile {
+  display: flex; align-items: center; gap: 0.75rem; padding: 1.15rem 1.5rem;
+  font-size: 1rem; font-weight: 600; color: var(--text-dark);
+  border-bottom: 1px solid var(--border-color-light); text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+.nav-link-mobile:hover, .nav-link-mobile.active {
+  background-color: var(--accent-1); color: var(--primary);
+}
+  
+  /* =========================================
+     5. HERO SECTION
+     ========================================= */
+  .section-hero { 
+    position: relative; min-height: calc(90vh - 5rem); display: flex; align-items: center; justify-content: center;
+        padding: 2rem 1.5rem 4rem 1.5rem;   /* top | right | bottom | left */ background-color: var(--page-bg-alt); overflow: hidden; 
+  }
+  .hero-bg-image { background-image: url('/TCVSelakuiCampus.jpg'); background-size: cover; background-position: center; opacity: 0.15; }
+  .hero-overlay { background: linear-gradient(to bottom, transparent, var(--page-bg-alt)); }
+  .hero-tag { background-color: var(--card-bg); border: 1px solid var(--border-color); padding: 0.35rem 1.25rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; color: var(--icon-2); box-shadow: var(--shadow-sm); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+  
+  /* =========================================
+     6. DYNAMIC CENTERED CARDS (Fix 1)
+     Overrides Tailwind grids to wrap nicely and take minimum space
+     ========================================= */
+  
+  /* Target all the grids in your components */
+  #academics .grid,
+  #facilities .grid,
+  #student-life .grid,
+  #admissions .grid,
+  #cbse .grid,
+  #newsletter .grid:last-child {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important; /* Centers cards dynamically */
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+    width: 100%;
+  }
+  
+  /* Standard Size Cards (Academics, Facilities, Admissions) */
+  #academics .card-flat,
+  #facilities .card,
+  #admissions .card,
+  #student-life > div > .grid > div {
+    flex: 0 1 280px !important; /* Occupies minimum 280px, doesn't stretch wildly */
+    width: 100%;
+    margin: 0;
+  }
+  
+  /* Wider Cards for CBSE */
+  #cbse .card {
+    flex: 0 1 340px !important;
+    width: 100%;
+  }
+  
+  /* Smaller Cards for Newsletter */
+  #newsletter .grid > .card {
+    flex: 0 1 180px !important;
+    width: 100%;
+  }
+  
+  /* Ensure cards look uniform */
+  .card, .card-flat, .card-alt, .card-highlight {
+    display: flex; flex-direction: column; height: 100%; padding: 2rem; border-radius: 1.25rem; transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card { background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: var(--shadow-md); }
+  .card-flat { background-color: var(--page-bg-alt); border: 1px solid var(--border-color); }
+  .card-alt { background-color: var(--card-bg-alt); border: 1px solid var(--border-color); }
+  .card-highlight { border: 1px solid var(--border-color); }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  
+  /* =========================================
+     7. LIST FORMATTING (Fix 2)
+     Perfect alignment for Goals & Philosophy
+     ========================================= */
+  
+  /* Educational Goals Setup */
+  #goals ul {
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+  #goals li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 1.25rem !important;
+  }
+  #goals .list-number {
+    flex-shrink: 0 !important; /* Prevents circle from shrinking */
+    margin-top: 0.125rem; /* Aligns circle with the first line of text */
+  }
+  #goals .body-text {
+    flex: 1 1 0% !important; /* Forces text to fill remaining space as a block */
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left;
+  }
+  
+  /* Philosophy Section Setup */
+  #philosophy .grid {
+    display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 1.5rem !important;
+  }
+  #philosophy .card-flat {
+    flex: 0 1 450px !important; /* Wider cards for reading text */
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important; /* Forces row layout */
+    align-items: flex-start !important;
+    gap: 1.25rem !important;
+    padding: 1.5rem !important;
+  }
+  #philosophy .bullet-point {
+    flex-shrink: 0 !important;
+    margin-top: 0.4rem !important; /* Optical alignment */
+  }
+  #philosophy .body-text {
+    flex: 1 1 0% !important;
+    margin: 0 !important;
+    text-align: left;
+  }
+  
+  /* constrain text blocks for reading */
+  #history .card, #goals .card { max-width: 850px; margin-inline: auto; }
+  
+  /* =========================================
+     8. MEDIA & FORM ASSETS
+     ========================================= */
+  .image-rounded { border-radius: 1.5rem; box-shadow: var(--shadow-lg); width: 100%; height: auto; object-fit: cover; }
+  .avatar { width: 7rem; height: 7rem; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow-md); border: 4px solid var(--page-bg); margin: 0 auto; }
+  .newsletter-img { width: 100%; max-width: 14rem; aspect-ratio: 3/4; object-fit: cover; border-radius: 1rem; box-shadow: var(--shadow-md); flex-shrink: 0; }
+  .newsletter-placeholder { width: 100%; aspect-ratio: 3/4; background-color: var(--border-color-light); border-radius: 0.75rem; color: var(--border-color); display: flex; align-items: center; justify-content: center;}
+  .map-placeholder { width: 100%; height: 18rem; background-color: var(--card-bg-alt); border-radius: 1.25rem; border: 1px solid var(--border-color); color: var(--text-muted); font-weight: 500; display: flex; align-items: center; justify-content: center;}
+  
+  .input-field {
+    width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-color); border-radius: 0.75rem; background-color: var(--card-bg); color: var(--text-dark); font-family: inherit; outline: none; transition: all 0.2s ease;
+  }
+  .input-field:focus { border-color: var(--icon-2); box-shadow: 0 0 0 3px var(--accent-2); }
+  .label-text { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem; }
+  
+  /* =========================================
+     9. BUTTONS
+     ========================================= */
+  button, a { cursor: pointer; font-family: inherit; }
+  .btn-primary, .btn-secondary, .btn-dark, .btn-outline {
+    display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2.5rem; border-radius: 0.75rem; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.2s ease; border: none; text-align: center;
+  }
+  .btn-primary { background-color: var(--primary); color: var(--text-light); box-shadow: var(--shadow-md); }
+  .btn-primary:hover { background-color: #0d655e; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-secondary { background-color: var(--card-bg); color: var(--text-dark); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+  .btn-secondary:hover { background-color: var(--page-bg-alt); }
+  .btn-dark { background-color: var(--text-dark); color: var(--text-light); width: 100%; }
+  .btn-dark:hover { background-color: #1e293b; }
+  .btn-outline { background-color: var(--card-bg); color: var(--text-dark); border: 1px solid var(--border-color); padding: 0.6rem 1.5rem; }
+  .btn-outline:hover { background-color: var(--page-bg-alt); }
+  
+  .btn-small { background-color: var(--page-bg-alt); color: var(--text-dark); padding: 0.5rem; border-radius: 0.5rem; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border-color); width: 100%; transition: background 0.2s; }
+  .btn-small:hover { background-color: var(--border-color-light); }
+  .btn-icon { padding: 0.6rem; border-radius: 0.5rem; background-color: var(--page-bg-alt); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; transition: all 0.2s; color: var(--text-dark); }
+  .btn-icon:hover { background-color: var(--border-color); }
+  
+  /* =========================================
+     10. ICONS & PASTEL THEMES
+     ========================================= */
+  .icon-wrapper { width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .icon-wrapper-lg { width: 4.5rem; height: 4.5rem; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-inline: auto; flex-shrink: 0; margin-bottom: 1rem; }
+  .icon-inline { flex-shrink: 0; }
+  
+  .theme-1 { background-color: var(--accent-1); color: var(--icon-1); }
+  .theme-2 { background-color: var(--accent-2); color: var(--icon-2); }
+  .theme-3 { background-color: var(--accent-3); color: var(--icon-3); }
+  .theme-4 { background-color: var(--accent-4); color: var(--icon-4); }
+  .theme-5 { background-color: var(--accent-5); color: var(--icon-5); }
+  .theme-6 { background-color: var(--accent-6); color: var(--icon-6); }
+  .text-theme-2 { color: var(--icon-2); }
+  .text-theme-4 { color: var(--icon-4); }
+  .text-theme-6 { color: var(--icon-6); }
+  
+  .list-number { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; flex-shrink: 0; }
+  .bullet-point { width: 0.6rem; height: 0.6rem; border-radius: 50%; background-color: var(--icon-1); flex-shrink: 0; }
+  .pill-badge { display: inline-block; padding: 0.35rem 1rem; font-size: 0.75rem; font-weight: 800; border-radius: 9999px; letter-spacing: 0.05em; }
+  
+  /* =========================================
+     11. FOOTER
+     ========================================= */
+  .footer { background-color: #0f172a; color: #cbd5e1; padding-top: 5rem; padding-bottom: 2rem; padding-left:2rem; border-top: 4px solid var(--icon-2); }
+  .footer-title { font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem; }
+  .footer-title-sm { font-size: 1.125rem; font-weight: 700; color: #ffffff; margin-bottom: 1.5rem; }
+  .footer-subtitle { font-size: 0.9rem; color: #94a3b8; font-weight: 500; margin-bottom: 1.5rem;}
+  .footer-text { font-size: 0.95rem; line-height: 1.7; color: #94a3b8; }
+  
+  .footer-icon-link { padding: 0.6rem; background-color: #1e293b; border-radius: 0.5rem; display: inline-flex; transition: all 0.2s ease; }
+  .footer-icon-link:hover { background-color: #334155; transform: translateY(-2px); }
+  .footer-link { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s ease; padding: 0.25rem 0; display: inline-block; }
+  .footer-link:hover { color: #ffffff; }
+  .footer-bottom { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #1e293b; text-align: center; font-size: 0.9rem; color: #64748b; font-weight: 500; }
+  
+  /* Clean up internal flex behaviors specifically for CBSE and nested rows */
+  #cbse .card { flex-direction: row; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; }
+  #cbse .card div { display: flex; align-items: center; gap: 0.75rem; }
+  
+  #about .card { flex-direction: row; align-items: flex-start; gap: 1.5rem; padding: 1.5rem; }
+  #about .icon-wrapper { margin-bottom: 0; }
+
+  /* =========================================
+   12. BACK TO TOP BUTTON
+   ========================================= */
+.back-to-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 99;
+  background-color: var(--accent-1); color: var(--primary);
+  width: 3.25rem; height: 3.25rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: none; cursor: pointer; box-shadow: var(--shadow-md);
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 300ms ease, visibility 300ms ease, transform 300ms ease, background-color 200ms ease;
+}
+.back-to-top.visible {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.back-to-top:hover {
+  background-color: var(--primary); color: var(--text-light);
+}
+
+/* =========================================
+   13. CUSTOM FIXES (Spacing, Layout, Scrollbar)
+   ========================================= */
+
+/* Visible Scrollbar configuration */
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--page-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 8px;
+  border: 3px solid var(--page-bg-alt);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Reduced Top Section Gap & Added Left/Right Margins from Window */
+.section-light { background-color: var(--page-bg); padding: 4rem 1.5rem; }
+.section-alt { background-color: var(--page-bg-alt); padding: 4rem 1.5rem; border-top: 1px solid var(--border-color-light); border-bottom: 1px solid var(--border-color-light); }
+.section-highlight { background-color: #f0f9ff; padding: 4rem 1.5rem; border-top: 1px solid #e0f2fe; }
+
+@media (min-width: 1024px) {
+  .section-light, .section-alt, .section-highlight {
+    padding: 5rem 6vw; /* Reduced top gap, Added side window padding */
+  }
+}
+
+
+/* =========================================
+   ABOUT US SECTION (Text Top, Image Bottom)
+   ========================================= */
+
+/* Force the main container to stack vertically */
+#about > div {
+  display: flex !important;
+  flex-direction: column !important; /* Forces Text on top, Image on bottom */
+  gap: 4rem !important; /* Space between text/cards and the bottom image */
+  width: 100%;
+}
+
+/* Ensure text section takes full width */
+#about > div > div:first-child {
+  width: 100%;
+  max-width: 1000px;
+  margin-inline: auto;
+  text-align: center; /* Centers the About Us text */
+}
+
+/* About Cards (Single Row if space) */
+#about .grid-cols-2 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 1.5rem !important;
+  margin-top: 2.5rem;
+}
+
+#about .card {
+  flex: 1 1 200px !important; /* Fits in one row on desktop, wraps on mobile */
+  padding: 1.5rem !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center;
+}
+
+/* Image acts as a full-width panoramic banner at the bottom */
+#about .image-rounded {
+  width: 100%;
+  height: 350px; /* Panoramic height */
+  max-height: none; 
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  display: block;
+}
+
+/* Mission & Vision / Leadership Layouts (Single Row dynamically) */
+#mission .grid, #principal .grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 2rem !important;
+  width: 100%;
+}
+
+#mission .card-highlight, #principal .card {
+  flex: 1 1 400px !important; /* Forces 1 row if screen is wide, otherwise stacks */
+  max-width: 600px;
+}
