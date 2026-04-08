@@ -36,28 +36,52 @@ export function Admissions() {
 }
 
 export function Newsletter() {
-  const pastIssues = ['February 2026', 'January 2026', 'December 2025', 'November 2025', 'October 2025', 'September 2025'];
+  // Define the latest issue data
+  const latestIssue = {
+    title: "June – August 2025 Edition",
+    desc: "Catch up on the latest activities, academic achievements, and updates from the TCV Selakui campus. Read the full PDF to explore more!",
+    url: "/NewsLetters/JunToAug2025.pdf",
+    coverImg: "https://picsum.photos/id/200/300/400" // Replace this URL later with a real image/screenshot of the newsletter cover
+  };
+
+  // Define previous issues as an array of objects
+  const pastIssues = [
+    { title: "March – May 2025", url: `${import.meta.env.BASE_URL}NewsLetters/MarToMay2025.pdf` },
+    { title: "Sep – Nov 2023", url: `${import.meta.env.BASE_URL}NewsLetters/SepToNov2023.pdf` },
+    { title: "June – Aug 2023", url: `${import.meta.env.BASE_URL}NewsLetters/JunToAug2023.pdf` },
+    { title: "March – May 2023", url: `${import.meta.env.BASE_URL}NewsLetters/MarToMay2023.pdf` }
+  ];
 
   return (
     <section id="newsletter" className="py-20 px-4 sm:px-6 lg:px-8 section-light">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         <div className="text-center mb-12">
-          <h2 className="heading-lg mb-2">School Monthly Newsletter</h2>
+          <h2 className="heading-lg mb-2">School Newsletter</h2>
           <p className="sub-text">Stay updated with the latest happenings at TCV Selakui</p>
         </div>
 
+        {/* LATEST ISSUE SECTION */}
         <div className="card-alt p-6 md:p-10 mb-12 flex flex-col md:flex-row gap-8 items-center w-full">
-          <img src="https://picsum.photos/id/200/300/400" alt="Newsletter Cover" className="newsletter-img" />
+          <img src={latestIssue.coverImg} alt="Newsletter Cover" className="newsletter-img" />
           <div className="flex flex-col items-start">
             <div className="pill-badge mb-4 theme-5">LATEST ISSUE</div>
-            <h3 className="heading-md mb-2">March 2026 Edition</h3>
-            <p className="body-text mb-6">Highlights from the Annual Sports Day, insights from the Principal's desk, and wonderful student art submissions. Read the full PDF to explore more!</p>
-            <button className="btn-outline flex items-center gap-2">
+            <h3 className="heading-md mb-2">{latestIssue.title}</h3>
+            <p className="body-text mb-6">{latestIssue.desc}</p>
+            
+            {/* Download Link for Latest Issue */}
+            <a 
+              href={latestIssue.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-outline flex items-center gap-2"
+              style={{ textDecoration: 'none' }}
+            >
               <Download size={18} /> Download PDF
-            </button>
+            </a>
           </div>
         </div>
 
+        {/* PREVIOUS ISSUES SECTION */}
         <h4 className="heading-sm self-start mb-6 w-full">Previous Issues</h4>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full">
           {pastIssues.map((issue, i) => (
@@ -65,10 +89,18 @@ export function Newsletter() {
                <div className="newsletter-placeholder mb-3 flex items-center justify-center">
                  <FileText size={32} />
                </div>
-               <p className="heading-xs mb-3">{issue}</p>
-               <button className="btn-small flex items-center justify-center gap-1 w-full">
+               <p className="heading-xs mb-3">{issue.title}</p>
+               
+               {/* Download Link for Past Issues */}
+               <a 
+                 href={issue.url} 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="btn-small flex items-center justify-center gap-1 w-full"
+                 style={{ textDecoration: 'none' }}
+               >
                  <Download size={14} /> PDF
-               </button>
+               </a>
              </div>
           ))}
         </div>
@@ -76,7 +108,6 @@ export function Newsletter() {
     </section>
   );
 }
-
 export function CBSE() {
   // 1. Change to an array of objects containing 'title' and 'url'
   const docs = [
