@@ -312,7 +312,9 @@
   .theme-5 { background-color: var(--accent-5); color: var(--icon-5); }
   .theme-6 { background-color: var(--accent-6); color: var(--icon-6); }
   .text-theme-2 { color: var(--icon-2); }
+  .text-theme-3 { color: var(--icon-3); }
   .text-theme-4 { color: var(--icon-4); }
+  .text-theme-5 { color: var(--icon-5); }
   .text-theme-6 { color: var(--icon-6); }
   
   .list-number { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; flex-shrink: 0; }
