@@ -39,7 +39,7 @@ export default function Footer() {
               <li>P.O. Selakui, Dehradun</li>
               <li>Uttarakhand, India - 248011</li>
               <li>Phone: +91 00000 00000</li>
-              <li>Email: selakui@tcv.org.in</li>
+              <li>Email: selakuischool@tcv.org.in</li>
             </ul>
           </div>
         </div>
