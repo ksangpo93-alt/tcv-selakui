@@ -81,18 +81,18 @@ export function CBSE() {
   // 1. Change to an array of objects containing 'title' and 'url'
   const docs = [
     { title: "Affiliation and Extension", url: "#" }, // '#' means you don't have the file yet
-    { title: "Building Safety Certificate", url: "/MandatoryDisclosure/Building Safety Certificate.pdf" },
+    { title: "Building Safety Certificate", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/BuildingSafetyCertificate.pdf` },
     { title: "Fee Structure", url: "#" }, 
-    { title: "Trust Registration", url: "/MandatoryDisclosure/Society Registration.pdf" }, 
-    { title: "NOC by State Govt", url: "/MandatoryDisclosure/NOC.pdf" }, 
+    { title: "Trust Registration", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/SocietyRegistration.pdf` }, 
+    { title: "NOC by State Govt", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/NOC.pdf"` }, 
     { title: "School Managing Committee", url: "#" }, 
     { title: "School Calendar", url: "#" }, 
-    { title: "Mandatory Disclosure", url: "/MandatoryDisclosure/Public Mandatory Disclosure.pdf" }, 
-    { title: "Parents Teachers Association", url: "/MandatoryDisclosure/Parents Teachers Association.pdf" }, 
+    { title: "Mandatory Disclosure", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/PublicMandatoryDisclosure.pdf` }, 
+    { title: "Parents Teachers Association", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/ParentsTeachersAssociation.pdf` }, 
     { title: "DEO Certificate", url: "#" }, 
     { title: "Last Three Year Result", url: "#" }, 
-    { title: "Fire Safety", url: "/MandatoryDisclosure/Fire Safety.pdf" }, 
-    { title: "Water, Health and Sanitation Certificate", url: "/MandatoryDisclosure/Water Health and Sanitation Certificate.pdf" }, 
+    { title: "Fire Safety", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/FireSafety.pdf` }, 
+    { title: "Water, Health and Sanitation Certificate", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/WaterHealthAndSanitationCertificate.pdf` }, 
     { title: "RTE Letter", url: "#" }, 
     { title: "Teaching Staff", url: "#" }
   ];
