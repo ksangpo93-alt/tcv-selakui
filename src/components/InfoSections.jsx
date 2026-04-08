@@ -184,7 +184,7 @@ export function Contact() {
             <div className="flex flex-col gap-4 body-text bg-slate-50 p-6 rounded-2xl border border-slate-200">
               <p><strong>Address:</strong><br/>Tibetan Children's Village School Selakui,<br/>P.O. Selakui, Dehradun,<br/>Uttarakhand, India - 248011</p>
               <p><strong>Phone:</strong> +91 00000 00000</p>
-              <p><strong>Email:</strong> selakui@tcv.org.in</p>
+              <p><strong>Email:</strong> selakuischool@tcv.org.in</p>
             </div>
           </div>
 

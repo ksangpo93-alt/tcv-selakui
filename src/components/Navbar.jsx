@@ -26,9 +26,9 @@ export default function Navbar() {
     { name: 'Home', href: '#home', icon: <Home size={16} className="text-theme-2" /> },
     { name: 'About Us', href: '#about', icon: <Info size={16} className="text-theme-4" /> },
     { name: 'Academics', href: '#academics', icon: <BookOpen size={16} className="text-theme-6" /> },
-    { name: 'Admissions', href: '#admissions', icon: <UserPlus size={16} className="text-theme-3" />},
+    { name: 'Admissions', href: '#admissions' },
     { name: 'CBSE Disclosures', href: '#cbse', icon: <FileText size={16} className="text-theme-1" /> },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
