@@ -28,7 +28,7 @@ export default function Navbar() {
     { name: 'Academics', href: '#academics', icon: <BookOpen size={16} className="text-theme-6" /> },
     { name: 'Admissions', href: '#admissions', icon: <UserPlus size={16} className="text-theme-3" />},
     { name: 'CBSE Disclosures', href: '#cbse', icon: <FileText size={16} className="text-theme-1" /> },
-    { name: 'Contact', href: '#contact', icon: <Mail size={16} className="text-theme-5" /> },
+    { name: 'Contact', href: '#contact' }
   ];
 
   return (
