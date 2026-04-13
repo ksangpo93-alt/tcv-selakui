@@ -115,7 +115,7 @@ export function CBSE() {
     { title: "Building Safety Certificate", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/BuildingSafetyCertificate.pdf` },
     { title: "Fee Structure", url: "#" }, 
     { title: "Trust Registration", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/SocietyRegistration.pdf` }, 
-    { title: "NOC by State Govt", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/NOC.pdf"` }, 
+    { title: "NOC by State Govt", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/NOC.pdf` }, 
     { title: "School Managing Committee", url: "#" }, 
     { title: "School Calendar", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/SchoolCalendar2026.pdf` }, 
     { title: "Mandatory Disclosure", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/PublicMandatoryDisclosure.pdf` }, 
