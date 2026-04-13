@@ -170,6 +170,7 @@
   #student-life .grid,
   #admissions .grid,
   #cbse .grid,
+  #legacy .grid,
   #newsletter .grid:last-child {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -199,6 +200,20 @@
   #newsletter .grid > .card {
     flex: 0 1 180px !important;
     width: 100%;
+  }
+
+  /* Fix: Ensure the Big 4 Stat Cards stack Top-to-Bottom */
+  #legacy .stats-grid > .card {
+    flex: 1 1 240px !important;
+    max-width: none;
+    flex-direction: column !important; 
+  }
+
+  /* Fix: Ensure Alumni Profiles display Side-by-Side (Image left, text right) */
+  #legacy .alumni-grid > .card {
+    flex: 1 1 300px !important;
+    max-width: 400px;
+    flex-direction: row !important; 
   }
   
   /* Ensure cards look uniform */
@@ -455,3 +470,4 @@
   flex: 1 1 400px !important; /* Forces 1 row if screen is wide, otherwise stacks */
   max-width: 600px;
 }
+

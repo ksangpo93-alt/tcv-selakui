@@ -1,5 +1,28 @@
 import React from 'react';
-import { Monitor, Palette, MessageSquare, TestTube, Calculator, Book, FlaskConical, Library, Home, Trophy, Utensils, Stethoscope, Mic, ShieldCheck, Activity, PenTool, Music, Globe } from 'lucide-react';
+import { 
+  Monitor, 
+  Palette, 
+  MessageSquare, 
+  TestTube, 
+  Calculator, 
+  Book, 
+  FlaskConical, 
+  Library, 
+  Home, 
+  Trophy, 
+  Utensils, 
+  Stethoscope, 
+  Mic, 
+  ShieldCheck, 
+  Activity, 
+  PenTool, 
+  Music, 
+  Globe,
+  Award, 
+  GraduationCap, 
+  MapPin, 
+  Star 
+} from 'lucide-react';
 
 export function Principal() {
   return (
@@ -107,6 +130,127 @@ export function StudentLife() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+// New Legacy Section showcasing alumni achievements and scholarships
+export function Legacy() {
+  const bigStats =[
+    { count: "43", title: "UWC", desc: "United World College Scholarship", theme: "theme-5" },
+    { count: "33", title: "MBBS", desc: "DoE/SHERIG, CTA Reserved Seat", theme: "theme-4" },
+    { count: "07", title: "UTAH", desc: "United States of America Scholarship", theme: "theme-3" },
+    { count: "36", title: "ENGG.", desc: "DoE/SHERIG Engg. Reserved Seat", theme: "theme-2" },
+  ];
+
+  const listStats =[
+    { name: "Pestalozzi Scholarship, UK", count: 18 },
+    { name: "Chiba Univ. Master Program, Japan", count: 14 },
+    { name: "Fulbright Scholarship, USA", count: "09" },
+    { name: "Ganden-Phodrang Merit Award", count: 25 },
+    { name: "Sikyong Award", count: "01" },
+    { name: "Doctorate Degree", count: "08" },
+    { name: "Berea Scholarship, USA", count: "04" },
+    { name: "Stony Brook Scholarship, USA", count: "01" },
+    { name: "Amchi, Mentsee-Khang", count: 31 },
+    { name: "Nordic Scholarship", count: 14 },
+  ];
+
+  const alumni =[
+    { name: "Tenzin Jampa", role: "MIT Scholarship Recipient", loc: "Cambridge, MA, USA", img: "Alumni/Jampa.png" },
+    { name: "Tenzin Choeyang", role: "Duke University Scholar", loc: "North Carolina, USA", img: "Alumni/Choeyang.png" },
+    { name: "Pema Payang", role: "Columbia University Scholar", loc: "New York, USA", img: "Alumni/Pema.png" },
+    { name: "Tenzin Choedup", role: "Chiba Scholarship Recipient", loc: "Chiba Tech, Japan", img: "Alumni/Choedup.png" },
+    { name: "Dr. Ugen Gyatso", role: "MBBS Doctor", loc: "Delek Hospital, H.P", img: "Alumni/Ugen.png" },
+    { name: "Dr. Tsering Sonam", role: "MBBS Doctor", loc: "Mainpat Hospital", img: "Alumni/Sonam.png" },
+    { name: "Mr. Tenzin Kunga", role: "Bio-Tech Engineer", loc: "Tokyo, Japan", img: "Alumni/Kunga.png" },
+    { name: "Dr. Tenzin Kunsel", role: "PhD in Physics", loc: "Researcher in Holland", img: "Alumni/Kunsel.png" },
+    { name: "Dr. Tenzin Khando", role: "PhD in Public Health", loc: "Univ. of California, LA", img: "Alumni/Khando.png" },
+    { name: "Dr. Tenzin Rabga", role: "PhD in Physics, MIT Grad", loc: "Michigan State Univ, US", img: "Alumni/Rabga.png" },
+    { name: "Ms. Tenzin Dolkar", role: "Pharmaceutical Scientist", loc: "ETH Zurich, Switzerland", img: "Alumni/Dolkar.png" },
+  ];
+
+  return (
+    <section id="legacy" className="py-20 px-4 sm:px-6 lg:px-8 section-alt">
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
+        
+        <div className="text-center mb-16">
+          <div className="flex justify-center mb-4 text-theme-2"><Award size={40} /></div>
+          <h2 className="heading-lg mb-4">The Legacy of Excellence</h2>
+          <p className="body-text-lg max-w-3xl">
+            There are a number of scholarships and reserved seats available for Tibetan students under DoE, CTA, Dharamsala and TCV organisation. Most of these seats were bagged by TCV School, Selakui students.
+          </p>
+        </div>
+
+        {/* Big 4 Stats (Redesigned as per your idea) */}
+        <div className="grid stats-grid md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-10">
+          {bigStats.map((stat, i) => (
+            <div key={i} className="card p-6 flex flex-col justify-between text-left border-t-4 border-t-transparent hover:border-t-slate-200 transition-all">
+              
+              {/* Top Row: Colorful Circle + Full Name */}
+              <div className="flex items-center gap-4 mb-5">
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center text-2xl font-black shrink-0 shadow-sm ${stat.theme}`}>
+                  {stat.count}
+                </div>
+                <p className="text-xs font-bold text-slate-500 uppercase leading-snug tracking-wider">
+                  {stat.desc}
+                </p>
+              </div>
+
+              {/* Bottom Row: Massive Short Form */}
+              <h3 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tighter">
+                {stat.title}
+              </h3>
+
+            </div>
+          ))}
+        </div>
+
+        {/* Other Scholarships List */}
+        <div className="card-flat p-8 w-full max-w-4xl mb-16">
+          <h4 className="heading-sm mb-6 flex items-center gap-2 border-b border-slate-200 pb-4">
+            <Star size={18} className="text-theme-4" /> Other Major Scholarships & Awards
+          </h4>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-3">
+            {listStats.map((item, i) => (
+              <div key={i} className="flex justify-between items-center border-b border-slate-100 border-dashed pb-2">
+                <span className="body-text text-sm">{item.name}</span>
+                <span className="font-bold text-slate-700">{item.count}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-slate-400 mt-6 italic text-center">
+            * The data above represents information collected as of September 2024. Actual numbers of alumni in these fields are likely higher.
+          </p>
+        </div>
+
+        {/* Alumni Profiles */}
+        <div className="text-center mb-10 w-full">
+          <h2 className="heading-lg mb-2">From Selakui to The World</h2>
+          <p className="sub-text">Meet some of our distinguished alumni making a global impact.</p>
+        </div>
+
+        <div className="grid alumni-grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          {alumni.map((alum, i) => (
+            <div key={i} className="card p-5 flex flex-row items-center gap-4 text-left border-l-4 border-l-transparent hover:border-l-sky-400 transition-all">
+              <img 
+                src={`${import.meta.env.BASE_URL}${alum.img}`} 
+                alt={alum.name} 
+                loading="lazy"
+                className="w-14 h-14 min-w-[3.5rem] min-h-[3.5rem] max-w-[3.5rem] max-h-[3.5rem] rounded-full object-cover shadow-sm shrink-0 border-2 border-slate-100"
+              />
+              <div className="flex flex-col">
+                <h4 className="heading-sm mb-0.5">{alum.name}</h4>
+                <p className="text-highlight text-[0.75rem] leading-tight mb-1">{alum.role}</p>
+                <p className="sub-text text-xs flex items-center gap-1">
+                  <MapPin size={12} className="shrink-0" /> {alum.loc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

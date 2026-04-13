@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Info, BookOpen, FileText, UserPlus, Mail } from 'lucide-react';
+import { Menu, X, Home, Info, BookOpen, FileText, UserPlus, Mail, Award  } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +26,7 @@ export default function Navbar() {
     { name: 'Home', href: '#home', icon: <Home size={16} className="text-theme-2" /> },
     { name: 'About Us', href: '#about', icon: <Info size={16} className="text-theme-4" /> },
     { name: 'Academics', href: '#academics', icon: <BookOpen size={16} className="text-theme-6" /> },
+    { name: 'Our Legacy', href: '#legacy', icon: <Award size={16} className="text-theme-3" /> },
     { name: 'Admissions', href: '#admissions', icon: <UserPlus size={16} className="text-theme-3" /> },
     { name: 'CBSE Disclosures', href: '#cbse', icon: <FileText size={16} className="text-theme-1" /> },
     { name: 'Contact', href: '#contact', icon: <Mail size={16} className="text-theme-5" /> },

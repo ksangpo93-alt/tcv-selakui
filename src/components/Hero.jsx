@@ -13,7 +13,7 @@ export default function Hero() {
         <h1 className="heading-xl mb-4">Tibetan Children's Village School Selakui</h1>
         
         <h2 className="heading-lg subtitle-muted mb-6">
-          སེ་ལ་ཀུའི་བོད་ཁྱིམ་སློབ་གྲྭ། | Others Before Self <span className="block mt-2 font-normal">| རང་ལས་གཞན་གཅེས།</span>
+          སེ་ལ་ཀུའི་བོད་ཁྱིམ་སློབ་གྲྭ། <span className="block mt-2 font-normal">རང་ལས་གཞན་གཅེས།</span>
         </h2>
         
         <p className="body-text-lg mb-2">Working for the care and education of Tibetan refugee children</p>
