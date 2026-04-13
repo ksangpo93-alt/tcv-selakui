@@ -32,7 +32,7 @@ export function About() {
           </div>
         </div>
         <div className="relative">
-          <img src="TCVSelakuiCampus.jpg" alt="Students in classroom" className="image-rounded w-full h-full object-cover" />
+          <img src="TCVSelakuiCampus.jpg" alt="TCV Selakui Campus" className="image-rounded w-full h-full object-cover" />
         </div>
       </div>
     </section>
