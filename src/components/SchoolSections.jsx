@@ -238,7 +238,7 @@ export function Legacy() {
                 src={`${import.meta.env.BASE_URL}${alum.img}`} 
                 alt={alum.name} 
                 loading="lazy"
-                className="w-14 h-14 min-w-[3.5rem] min-h-[3.5rem] max-w-[3.5rem] max-h-[3.5rem] rounded-full object-cover shadow-sm shrink-0 border-2 border-slate-100"
+                className="alumni-avatar"
               />
               <div className="flex flex-col">
                 <h4 className="heading-sm mb-0.5">{alum.name}</h4>

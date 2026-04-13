@@ -471,3 +471,17 @@
   max-width: 600px;
 }
 
+/* Unbreakable rule for Alumni Avatars (70x70px Perfect Circle) */
+.alumni-avatar {
+  width: 70px !important;
+  height: 70px !important;
+  min-width: 70px !important;
+  min-height: 70px !important;
+  max-width: 70px !important;
+  max-height: 70px !important;
+  border-radius: 50% !important; /* Forces perfect circle */
+  object-fit: cover !important;  /* Centers the face without squishing */
+  flex-shrink: 0 !important;     /* Prevents flexbox from stretching it */
+  border: 2px solid #ffffff;
+  box-shadow: var(--shadow-sm);
+}
