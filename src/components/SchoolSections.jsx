@@ -169,6 +169,10 @@ export function Legacy() {
     { name: "Dr. Tenzin Khando", role: "PhD in Public Health", loc: "Univ. of California, LA", img: "Alumni/Khando.png" },
     { name: "Dr. Tenzin Rabga", role: "PhD in Physics, MIT Grad", loc: "Michigan State Univ, US", img: "Alumni/Rabga.png" },
     { name: "Ms. Tenzin Dolkar", role: "Pharmaceutical Scientist", loc: "ETH Zurich, Switzerland", img: "Alumni/Dolkar.png" },
+    { name: "Dr. Wangchen", role: "PhD in Neuroscience", loc: "University of Florida, USA", img: "Alumni/Wangchen.png" },
+    { name: "Dr. Tashi Tsering", role: "PhD in Plant Biology", loc: "University of Fribourg, Switzerland", img: "Alumni/Tashi.png" },
+    { name: "Mr. Tenzin Kunsel", role: "Pilot & Flight Operation Controller", loc: "New Zealand School of Aviation", img: "Alumni/Kunsel2.png" },
+    { name: "LT Stanzin Angmo", role: "Air Defence Officer", loc: "514 AD regiment in Ladakh", img: "Alumni/Wangmo.png" }
   ];
 
   return (
