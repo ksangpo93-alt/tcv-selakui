@@ -6,7 +6,7 @@ export function Admissions() {
     <section id="admissions" className="py-12 section-highlight">
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
         <h2 className="heading-lg mb-4">Admissions 2026–27</h2>
-        <p className="body-text mb-10">Admissions Open for Class VI–VIII. Eligibility: Tibetan refugee students (merit-based entrance test).</p>
+        <p className="body-text mb-10">Open Admission for Non-TCV children of Class VI–IX will open in <mark className="bg-yellow-200 px-1">September 2026</mark>. Eligibility: Tibetan refugee students (<mark className="bg-yellow-200 px-1">merit-based entrance test</mark>).</p>
         
         <div className="grid grid-cards mb-8 w-full text-left">
           <div className="card p-6 flex flex-col">
