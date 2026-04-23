@@ -118,14 +118,14 @@ export function CBSE() {
     { title: "NOC by State Govt", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/NOC.pdf` }, 
     { title: "School Managing Committee", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/SMC.pdf` }, 
     { title: "School Calendar", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/SchoolCalendar2026.pdf` }, 
-    { title: "Mandatory Disclosure", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/PublicMandatoryDisclosure.pdf` }, 
+    { title: "Student Strength", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/StudentStrength.pdf` }, 
     { title: "Parents Teachers Association", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/ParentsTeachersAssociation.pdf` }, 
     { title: "DEO Certificate", url: "#" }, 
     { title: "Last Three Year Result", url: "#" }, 
     { title: "Fire Safety", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/FireSafety.pdf` }, 
     { title: "Water, Health and Sanitation Certificate", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/WaterHealthAndSanitationCertificate.pdf` }, 
     { title: "RTE Letter", url: "#" }, 
-    { title: "Teaching Staff", url: "#" }
+    { title: "Teaching Staff", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/TeachingStaff.pdf` }
   ];
 
   return (
