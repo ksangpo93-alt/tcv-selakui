@@ -121,10 +121,10 @@ export function CBSE() {
     { title: "Student Strength", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/StudentStrength.pdf` }, 
     { title: "Parents Teachers Association", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/ParentsTeachersAssociation.pdf` }, 
     { title: "DEO Certificate", url: "#" }, 
-    { title: "Last Three Year Result", url: "#" }, 
+    { title: "Last Three Year Result", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/result2025.pdf`}, 
     { title: "Fire Safety", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/FireSafety.pdf` }, 
     { title: "Water, Health and Sanitation Certificate", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/WaterHealthAndSanitationCertificate.pdf` }, 
-    { title: "RTE Letter", url: "#" }, 
+    { title: "RTE Letter", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/RTELetter.pdf` }, 
     { title: "Teaching Staff", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/TeachingStaff.pdf` }
   ];
 
