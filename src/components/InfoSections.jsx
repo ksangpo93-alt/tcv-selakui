@@ -113,7 +113,7 @@ export function CBSE() {
   const docs = [
     { title: "Affiliation and Extension", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/CBSEAffiliation.pdf` }, // '#' means you don't have the file yet
     { title: "Building Safety Certificate", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/BuildingSafetyCertificate.pdf` },
-    { title: "Fee Structure", url: "#" }, 
+    { title: "Fee Structure", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/FeeStructure.pdf` }, 
     { title: "Trust Registration", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/SocietyRegistration.pdf` }, 
     { title: "NOC by State Govt", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/NOC.pdf` }, 
     { title: "School Managing Committee", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/SMC.pdf` }, 
