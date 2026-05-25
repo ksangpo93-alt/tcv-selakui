@@ -30,6 +30,8 @@ export default function Navbar() {
     { name: 'Admissions', href: '#admissions', icon: <UserPlus size={16} className="text-theme-3" /> },
     { name: 'CBSE Disclosures', href: '#cbse', icon: <FileText size={16} className="text-theme-1" /> },
     { name: 'Contact', href: '#contact', icon: <Mail size={16} className="text-theme-5" /> },
+    // NEW TCV SMS PORTAL LINK
+    { name: 'TCV SMS', href: 'https://portal.tcvselakui.org/', external: true, isButton: true, icon: <LayoutDashboard size={16} /> }
   ];
 
   return (
