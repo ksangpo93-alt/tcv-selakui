@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Info, BookOpen, FileText, UserPlus, Mail, Award  } from 'lucide-react';
+import { Menu, X, Home, Info, BookOpen, FileText, UserPlus, Mail, Award, ExternalLink  } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +30,13 @@ export default function Navbar() {
     { name: 'Admissions', href: '#admissions', icon: <UserPlus size={16} className="text-theme-3" /> },
     { name: 'CBSE Disclosures', href: '#cbse', icon: <FileText size={16} className="text-theme-1" /> },
     { name: 'Contact', href: '#contact', icon: <Mail size={16} className="text-theme-5" /> },
+
+    { 
+    name: 'SMS Portal', 
+    href: 'https://portal.tcvselakui.org', 
+    icon: <ExternalLink size={16} className="text-theme-2" />,
+    isExternal: true 
+  },
   ];
 
   return (
@@ -48,6 +55,8 @@ export default function Navbar() {
             <a 
               key={link.name} 
               href={link.href}
+              target={link.isExternal ? "_blank" : undefined}
+              rel={link.isExternal ? "noopener noreferrer" : undefined}
               className={`nav-link ${activeHash === link.href ? 'active' : ''}`}
             >
               {link.icon && link.icon}
@@ -66,13 +75,15 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Wrapper (Handles the slide-down animation) */}
+      {/* Mobile Menu Wrapper */}
       <div className={`mobile-menu-wrapper ${isOpen ? 'open' : ''}`}>
         <div className="mobile-menu-scroll">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
+              target={link.isExternal ? "_blank" : undefined}
+              rel={link.isExternal ? "noopener noreferrer" : undefined}
               onClick={() => setIsOpen(false)}
               className={`nav-link-mobile ${activeHash === link.href ? 'active' : ''}`}
             >
