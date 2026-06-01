@@ -125,7 +125,8 @@ export function CBSE() {
     { title: "Fire Safety", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/FireSafety.pdf` }, 
     { title: "Water, Health and Sanitation Certificate", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/WaterHealthAndSanitationCertificate.pdf` }, 
     { title: "RTE Letter", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/RTELetter.pdf` }, 
-    { title: "Teaching Staff", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/TeachingStaff.pdf` }
+    { title: "Teaching Staff", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/TeachingStaff.pdf` },
+    { title: "Self-Declaration", url: `${import.meta.env.BASE_URL}MandatoryDisclosure/SelfDeclaration.pdf` }
   ];
 
   return (
